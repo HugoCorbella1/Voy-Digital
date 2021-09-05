@@ -1,0 +1,255 @@
+.barraDeNavegacion {
+    height: 15vh;
+    width: 100vw;
+    background: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 100%;
+    z-index: 100;
+    position: fixed;
+
+    .logotipo {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            img {
+                height: 70%;
+            }
+        }
+    }
+
+    .botonBarraDeNavegacionResponsiva {
+        display: none;
+    }
+
+    .botonBarraDeNavegacionResponsiva_contenedorIcono {
+        grid-column-start: 7;
+        grid-column-end: 9;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        .botonBarraDeNavegacionResponsiva_icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+
+            &__linea {
+                position: absolute;
+                height: 2px;
+                width: 20px;
+                border-radius: 4px;
+                background-color: var(--colorPrincipal);
+                transition: background 0.8s;
+
+                &::before, &::after {
+                    height: 100%;
+                    width: 100%;
+                    background-color: var(--colorPrincipal);
+                    border-radius: 4px;
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    transition: background 0.8s;
+                }
+
+                &::before {
+                    transform: translateY(-5px);
+                }
+
+                &::after {
+                    transform: translateY(5px);
+                }
+            }
+        }
+    }
+
+    .enlacesDeNavegacion {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .enlaceDeNavegacion {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+                color: var(--colorPrincipal);
+                font-family: gothamBlack;
+                font-size: 2vh;
+                transition: 0.4s ease;
+            }
+
+            .seccionVisualizadaEnBarraDeNavegacion {
+                padding: 3vh;
+                background-color: var(--colorSecundario);
+                color: white;
+            }
+        }
+    }
+}
+
+//Diseño responsivo
+@media screen and (max-aspect-ratio: 880/651) {
+    .barraDeNavegacion {
+        .botonBarraDeNavegacionResponsiva_contenedorIcono {
+            display: flex;
+
+            .botonBarraDeNavegacionResponsiva_icono {
+                &__linea {
+                    animation: cierreMedio 0.8s backwards;
+                    animation-direction: reverse;
+
+                    &::before {
+                        animation: cierreSuperior 0.8s backwards;
+                        animation-direction: reverse;
+                    }
+
+                    &::after {
+                        animation: cierreInferior 0.8s backwards;
+                        animation-direction: reverse;
+                    }
+                }
+            }
+        }
+
+        .enlacesDeNavegacion {
+            position: absolute;
+            background-color: var(--colorPrincipal);
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            flex-direction: column;
+            clip-path: circle(200px at top right);
+            opacity: 0;
+            transition: opacity 0.8s 0.5s, clip-path 1s 0.5s;
+
+            .enlaceDeNavegacion {
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .botonBarraDeNavegacionResponsiva:checked ~ .enlacesDeNavegacion {
+            clip-path: circle(100% at center);
+            opacity: 1;
+        }
+        
+        .botonBarraDeNavegacionResponsiva:checked ~ .botonBarraDeNavegacionResponsiva_contenedorIcono {
+            .botonBarraDeNavegacionResponsiva_icono {
+                &__linea {
+                    background-color: white;
+                    animation: aperturaMedia 0.8s forwards;
+
+                    &::before {
+                        background-color: white;
+                        animation: aperturaSuperior 0.8s forwards;
+                    }
+
+                    &::after {
+                        background-color: white;
+                        animation: aperturaInferior 0.8s forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Animaciones
+@keyframes aperturaSuperior {
+    0% {
+        transform: translateY(5px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(90deg);
+    }
+}
+
+@keyframes aperturaMedia {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(45deg);
+    }
+}
+
+@keyframes aperturaInferior {
+    0% {
+        transform: translateY(-5px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes cierreSuperior {
+    0% {
+        transform: translateY(5px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(90deg);
+    }
+}
+
+@keyframes cierreMedio {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(45deg);
+    }
+}
+
+@keyframes cierreInferior {
+    0% {
+        transform: translateY(-5px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}

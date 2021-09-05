@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voy Digital</title>
+    <!--Ícono de la página-->
+    <link rel="shortcut icon" href="IMAGENES/favicon.ico" type="image/x-icon">
+    <!--Hoja de estilos-->
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <header class="barraDeNavegacion">
+        <div class="logotipo">
+            <a href="#">
+                <img src="IMAGENES/logoVoy.svg" alt="Logotipo de Voy Digital">
+            </a>
+        </div>
+
+        <input type="checkbox" name="botonBarraDeNavegacionResponsiva" id="botonBarraDeNavegacionResponsiva" class="botonBarraDeNavegacionResponsiva">
+        <div class="botonBarraDeNavegacionResponsiva_contenedorIcono">
+            <label for="botonBarraDeNavegacionResponsiva" class="botonBarraDeNavegacionResponsiva_icono">
+                <span class="botonBarraDeNavegacionResponsiva_icono__linea"></span>
+            </label>
+        </div>
+
+        <ul class="enlacesDeNavegacion">
+            <li class="enlaceDeNavegacion">
+                <a data-page="inicio" href="#inicio">INICIO</a>
+            </li>
+            <li class="enlaceDeNavegacion">
+                <a data-page="servicios" href="#servicios">SERVICIOS</a>
+            </li>
+            <li class="enlaceDeNavegacion">
+                <a data-page="nosotros" href="#nosotros">NOSOTROS</a>
+            </li>
+            <li class="enlaceDeNavegacion">
+                <a data-page="contacto" href="#contacto">CONTACTO</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <section data-index="0" class="inicio" id="inicio"></section>
+        <section data-index="1" class="servicios" id="servicios"></section>
+        <section data-index="2" class="nosotros" id="nosotros"></section>
+        <section data-index="3" class="contacto" id="contacto"></section>
+    </main>
+
+    <script src="JAVASCRIPT/main.js"></script>
+</body>
+</html>
