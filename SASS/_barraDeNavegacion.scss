@@ -177,6 +177,19 @@
     }
 }
 
+@media screen and (max-aspect-ratio: 500/651) {
+    .barraDeNavegacion {
+        .logotipo {
+            a {
+                img {
+                    height: auto;
+                    width: 10vw;
+                }
+            }
+        }
+    }
+}
+
 //Animaciones
 @keyframes aperturaSuperior {
     0% {

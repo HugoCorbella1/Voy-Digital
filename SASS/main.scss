@@ -1,5 +1,6 @@
 //Importaciones
 @import 'barraDeNavegacion';
+@import 'seccionDeInicio';
 
 //Fuentes
 @font-face {
@@ -30,10 +31,11 @@ body {
     
     section {
         min-height: 100vh;
+        max-height: 100vh;
     }
 
     .inicio {
-        background-color: grey;
+        background-color: var(--colorPrincipal);
     }
 
     .servicios {

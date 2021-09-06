@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
+    <!--Barra de navegación-->
     <header class="barraDeNavegacion">
         <div class="logotipo">
             <a href="#">
@@ -41,11 +42,36 @@
         </ul>
     </header>
 
+    <!--Cuerpo de la página principal-->
     <main>
-        <section data-index="0" class="inicio" id="inicio"></section>
+        <!--Sección de inicio-->
+        <section data-index="0" class="inicio" id="inicio">
+            <div class="contenedorGeneral_inicio">
+                <img class="fondo_inicio" src="IMAGENES/wavePaginaDeInicio.svg" alt="Ilustración de fondo para sección de inicio Voy Digital">
+
+                <div class="contenedorTexto_inicio">
+                    <h1 class="titulo_inicio">LOREM IPSUM</h1>
+                    <p class="informacion_inicio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nostrum fuga facere dolorum sint vitae sapiente et temporibus, mollitia nam, blanditiis maxime voluptas labore veniam fugit. Qui autem non animi?</p>
+                    <div class="boton_inicio">
+                        <a href="#contacto">CONTÁCTANOS</a>
+                    </div>
+                </div>
+
+                <div class="contenedorIlustracion_inicio">
+                    <img src="IMAGENES/ilustracionPaginaDeInicio.svg" alt="Ilustración para sección de inicio Voy Digital" class="ilustracion_inicio">
+                </div>
+            </div>
+        </section>
+
+        <!--Sección de servicios-->
         <section data-index="1" class="servicios" id="servicios"></section>
+        
+        <!--Sección de nosotros-->
         <section data-index="2" class="nosotros" id="nosotros"></section>
+        
+        <!--Sección de contacto-->
         <section data-index="3" class="contacto" id="contacto"></section>
+        
     </main>
 
     <script src="JAVASCRIPT/main.js"></script>
